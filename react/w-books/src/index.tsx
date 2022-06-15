@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import App from 'components/App';
+import Signup from 'components/signup';
 import 'config/i18n';
 import 'scss/application.scss';
 
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const renderApp = () => {
   render(
     <React.StrictMode>
-      <App />
+      <Signup />
     </React.StrictMode>,
     document.getElementById('root')
   );

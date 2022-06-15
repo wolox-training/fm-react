@@ -1,0 +1,58 @@
+.login-master-container{
+  background-color: $white;
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 510px;
+    width: 300px;
+    background-color: $wild-sand;
+    padding-bottom: 24px;
+    border-top: 8px solid $cerulean;
+  
+    .wolox-logo {
+      margin-top: 20px;
+      align-self: center;
+      height: 70px;
+      width: 212px;
+    }
+  
+    .text {
+      align-self: flex-start;
+      color: $black;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+  
+    .credentials-box {
+      height: 32px;
+      width: 252px;
+      border-radius: 5px;
+      background-color: $white;
+      margin-bottom: 16px;
+    }
+
+    .link-book-list{
+      color: $white;
+    }
+
+    .redirection-button{
+      margin-top: 16px;
+    }
+
+    .login-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid $silver-chalice;
+      margin-top: 16px;
+    
+      .button:first-of-type{
+        margin: 8px 0 16px;
+      }
+    }
+  }
+}

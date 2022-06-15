@@ -1,0 +1,90 @@
+.list-container {
+  background-color: $wild-sand;
+
+  .navbar-container {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    border-top: 6px solid $cerulean; 
+    height: 70px;
+    width: 100%;
+    max-width: 1366px;
+    background-color: $white;
+    box-shadow: 0 4px 10px 0 $black-rgba;
+    justify-content: space-around;  
+
+    .navbar {
+      display: flex;
+      height: 70px;
+      width: 100%;
+      max-width: 900px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      
+      .wolox-logo {
+        height: 70px;
+        width: 212px;
+      }
+
+      .logout {
+        color: $black;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+
+  .master-book-list-container {
+    display: flex;
+    height: 636px;
+    width: 900px;
+    background-color: $wild-sand;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    .book-container {
+      display: flex;
+      height: 300px;
+      width: 198px;
+      background-color: $white;
+      box-shadow: 4px 4px 10px 0 $black-rgba;
+      flex-direction: column;
+      justify-content: center;
+    
+      .cover-page-list {
+        height: 200px;
+        width: 142px;
+        align-self: center;
+        }
+    
+      .book-list-detail {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        padding-left: 28px;
+          
+        .book-list-title {
+          color: $black;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 18px;
+          margin-bottom: 8px;
+        }
+    
+        .book-list-author {
+          color: $gray;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+
+      &:hover {
+        transition: width 2s, height 2s, transform 1s;
+        transform: scaleX(1.1) scaleY(1.1);
+      }
+    }
+  }
+}
