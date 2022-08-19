@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Signup from 'components/signup';
 import 'config/i18n';
@@ -10,7 +11,16 @@ import reportWebVitals from './reportWebVitals';
 const renderApp = () => {
   render(
     <React.StrictMode>
-      <Signup />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/home" />
+          <Route path="/login" />
+          <Route path="/booklist" />
+        </Switch>
+      </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
   );

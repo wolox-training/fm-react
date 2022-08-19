@@ -28,14 +28,14 @@
     "start": "rescripts start",
     "start-env": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",
-    "test": "rescripts test --env=jsdom",
+    "test": "jest -u",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
     "lint": "./node_modules/eslint/bin/eslint.js src --ext .js --ext .ts --ext .tsx",
     "lint-fix": "npm run lint -- --fix && ./node_modules/stylelint/bin/stylelint.js '**/*.scss' --fix",
     "lint-scss": "./node_modules/stylelint/bin/stylelint.js '**/*.scss'",
     "lint-diff": "git diff --name-only --cached --relative --diff-filter=ACM | grep -e \\.js$ -e \\.tsx$ -e \\.ts$ | xargs eslint",
     "coverage": "npm run test -- --coverage --watchAll=false",
-    "coverage-diff": "npm run test coverage -- --changedSince=master"
+    "coverage-diff": "npm run test coverage -- --changedSince=master --watchAll=false"
   },
   "browserslist": {
     "production": [
@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.18.2",
     "@rescripts/cli": "0.0.14",
     "@testing-library/react-hooks": "^3.7.0",
     "@types/jest": "^26.0.24",
@@ -82,7 +83,8 @@
     "stylelint": "^9.10.1",
     "stylelint-config-wolox": "^1.0.7",
     "stylelint-no-indistinguishable-colors": "^1.2.1",
-    "stylelint-scss": "^3.5.4"
+    "stylelint-scss": "^3.5.4",
+    "ts-jest": "^26.5.0"
   },
   "title": "react-training-express",
   "jest": {
@@ -99,7 +101,8 @@
         "lines": 0,
         "statements": 0
       }
-    }
+    },
+    "preset": "ts-jest"
   },
   "repository": {
     "type": "git"

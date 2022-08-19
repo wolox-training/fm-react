@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @import 'equalizer';
+
 @import 'variables';
+
 @import 'detail';
+
 @import 'book-list-detail';
+
 @import 'login-detail';
+
 @import '~wolox-equalizer/equalizer';
+
 @import 'layout';
+
 @import 'margins';
+
 @import 'components';
 
 body {
@@ -20,6 +29,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
 .button {
   display: flex;
   justify-content: center;
@@ -33,12 +43,14 @@ code {
   &.action-button {
     background-color: $earls-green;
     color: $white;
+    cursor: pointer;
   }
 
   &.redirection-button {
     background-color: $wild-sand;
     border: 2px solid $earls-green;
     color: $earls-green;
+    cursor: pointer;
   }
 }
 
