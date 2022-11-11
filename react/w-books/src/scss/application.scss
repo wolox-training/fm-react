@@ -8,7 +8,7 @@
 
 @import 'book-list-detail';
 
-@import 'login-detail';
+@import '../components/signup/styles.module.scss';
 
 @import '~wolox-equalizer/equalizer';
 
@@ -58,7 +58,6 @@ code {
   display: flex;
   height: 768px;
   width: 100%;
-  max-width: $desktop;
   justify-content: center;
   align-items: center;
 }

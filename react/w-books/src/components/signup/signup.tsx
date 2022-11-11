@@ -2,7 +2,9 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 
-import logo from '../assets/LogoWolox.png';
+import logo from '../../assets/LogoWolox.png';
+import styles from './styles.module.scss';
+import cn from 'classnames';
 
 export default function SignUp() {
   const history = useHistory();
@@ -15,62 +17,61 @@ export default function SignUp() {
   };
 
   return (
-    <div>
-      <div className="master-container login-master-container">
-        <div className="login-container">
-          <img className="wolox-logo" src={logo} alt="wolox logo" />
-          <form className="login-form">
-            <label htmlFor="name" className="text">
+      <div className={cn('master-container', styles.loginMasterContainer)}>
+        <div className={styles.loginContainer}>
+          <img className={styles.woloxLogo} src={logo} alt="wolox logo" />
+          <form className={styles.loginForm}>
+            <label htmlFor="name" className={styles.text}>
               {' '}
               Nombre
             </label>
             <input
               type="name"
-              className="credentials-box"
+              className={styles.credentialsBox}
               id="nombre"
               name="first_name"
               ref={register({ required: true, pattern: /^[A-Za-z]+$/i })}
             />
-            <label htmlFor="surname" className="text">
+            <label htmlFor="surname" className={styles.text}>
               {' '}
               Apellido
             </label>
             <input
               type="surname"
-              className="credentials-box"
+              className={styles.credentialsBox}
               id="apellido"
               name="last_name"
               ref={register({ required: true, pattern: /^[A-Za-z]+$/i })}
             />
-            <label htmlFor="email" className="text">
+            <label htmlFor="email" className={styles.text}>
               {' '}
               Email
             </label>
             <input
               type="email"
-              className="credentials-box"
+              className={styles.credentialsBox}
               id="email"
               name="email"
               ref={register({ required: true })}
             />
-            <label htmlFor="password" className="text">
+            <label htmlFor="password" className={styles.text}>
               {' '}
               Password
             </label>
             <input
               type="password"
-              className="credentials-box"
+              className={styles.credentialsBox}
               id="password"
               name="password"
               ref={register({ required: true })}
             />
-            <label htmlFor="password" className="text">
+            <label htmlFor="password" className={styles.text}>
               {' '}
               Confirmación de Password
             </label>
             <input
               type="password"
-              className="credentials-box"
+              className={styles.credentialsBox}
               id="confirmacionPassword"
               name="confirmacionPassword"
               ref={register({
@@ -83,11 +84,10 @@ export default function SignUp() {
                 }
               })}
             />
-            <button type="button" className="button action-button" onClick={onSubmit}>Sign Up</button>
+            <button type="button" className={cn('button', 'action-button')} onClick={onSubmit}>Sign Up</button>
           </form>
-          <button type="button" className="button redirection-button">Login</button>
+          <button type="button" className={cn('button', 'redirection-button')}>Login</button>
         </div>
       </div>
-    </div>
   );
 }
