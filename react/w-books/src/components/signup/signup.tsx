@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 
+
 import logo from '../../assets/LogoWolox.png';
 import styles from './styles.module.scss';
 import cn from 'classnames';
