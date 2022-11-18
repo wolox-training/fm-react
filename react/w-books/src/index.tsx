@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import Signup from 'components/signup/signup';
+import Signup from 'components/Signup';
 import 'config/i18n';
 import 'scss/application.scss';
 
