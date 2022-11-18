@@ -1,6 +1,6 @@
 config:
   dockerfile: .woloxci/Dockerfile
-  project_name: w-books
+  project_name: <%= projectName %>
 
 steps:
   lint:

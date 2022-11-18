@@ -1,0 +1,288 @@
+$width-badge: 95px;
+$height-badge: 119px;
+
+.index-master-container {
+  display: grid;
+  height: 768px;
+  max-width: $desktop;
+  width: 100%;
+  background-color: $wild-sand;
+  grid-template-rows: 173px 416px 173px;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas: 'return''cover-text''.';
+
+  .return-button {
+    align-self: flex-end;
+    color: $black;
+    font-size: 20px;
+    line-height: 24px;
+    grid-area: return;
+    margin-bottom: 108px;
+
+    &::before {
+      margin-right: 12px;
+      content: url('../assets/back-arrow-20.png');
+    }
+  }
+
+  .cover-text-container {
+    position: relative;
+    display: grid;
+    align-self: center;
+    grid-area: cover-text;
+    height: 416px;
+    width: 900px;
+    background-color: $white;
+    box-shadow: 4px 4px 10px 0 $black-rgba;
+    grid-template-columns: 309px 250px 341px;
+    grid-template-rows: 75px 341px;
+    grid-template-areas: 'image title genre'
+      'image description description';
+
+    .cover-page-badge-container {
+      display: flex;
+      position: relative;
+      grid-area: image;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .cover-page {
+      height: 368px;
+      width: 261px;
+      align-self: center;
+    }
+
+    .badge {
+      position: absolute;
+      display: flex;
+      height: 119px;
+      width: 95px;
+      transform: rotate(15deg);
+      right: 0;
+      top: 10px;
+      z-index: 1;
+    }
+
+    .book-title {
+      height: 40px;
+      color: $black;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+      align-self: center;
+      grid-area: title;
+      margin-left: 28px;
+    }
+
+    .book-genre {
+      height: 40px;
+      color: $gray;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      align-self: center;
+      margin-top: 8px;
+      grid-area: genre;
+      margin-left: 20px;
+    }
+
+    .container-text {
+      grid-area: description;
+      display: flex;
+      flex-direction: column;
+      margin: 0 24px 0 28px;
+      border-top: 4px solid $earls-green;
+    }
+
+    .container-detail {
+      display: flex;
+      flex-direction: column;
+      margin-top: 36px;
+    }
+
+    .title {
+      color: $black;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    .detail {
+      color: $gray;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 36px;
+    }
+  }
+
+  @media only screen and (max-width: $tablet) {
+    height: 768px;
+    width: 100%;
+    grid-template-rows: 99px 569px 100px;
+    grid-template-areas: 'return-button'
+      'container'
+      '.';
+
+    .return-button {
+      font-size: 18px;
+      grid-area: return-button;
+      justify-self: flex-start;
+      margin: 0 0 33px;
+    }
+
+    .cover-text-container {
+      height: 569px;
+      width: 853px;
+      grid-area: container;
+      justify-items: center;
+      grid-template-columns: 329px 524px;
+      grid-template-rows: 71px 74px 368px 56px;
+      justify-self: center;
+      margin: 0;
+      grid-template-areas: '. title'
+        '. genre'
+        'image description'
+        '. .';
+    }
+
+    .cover-page-badge-container {
+      display: grid;
+      align-self: center;
+      justify-self: center;
+      grid-area: image;
+
+      .badge {
+        width: calc(#{$width-badge} * 0.7);
+        height: calc(#{$height-badge} * 0.7);
+        right: -16px;
+        top: -10px;
+      }
+    }
+
+    .book-title {
+      margin: 0;
+      grid-area: title;
+      justify-self: flex-start;
+      align-self: flex-end;
+    }
+
+    .book-genre {
+      margin: 0 0 0 50px;
+      grid-area: genre;
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+
+    .container-text {
+      justify-self: flex-start;
+      align-self: center;
+      width: 470px;
+      margin: 0 20px 0 0;
+      grid-area: description;
+      border-top: 0;
+    }
+
+    .container-detail {
+      .title {
+        font-size: 24px;
+      }
+
+      .detail {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    height: 667px;
+    width: 100%;
+    grid-template-rows: 32px 570px 65px;
+    grid-template-areas: '.'
+      'container'
+      'return-button';
+
+    .return-button {
+      font-size: 18px;
+      grid-area: return-button;
+      justify-self: center;
+      margin: 20px 0 0;
+    }
+
+    .cover-text-container {
+      height: 570px;
+      width: 336px;
+      grid-area: container;
+      justify-items: center;
+      grid-template-columns: 336px;
+      grid-template-rows: 71px 299px 40px 160px;
+      justify-self: center;
+      margin: 0;
+      grid-template-areas: 'title'
+        'image'
+        'genre'
+        'description';
+
+      .cover-page-badge-container {
+        display: grid;
+        align-self: center;
+        justify-self: center;
+      }
+
+      .cover-page {
+        height: 299px;
+        width: 212px;
+        grid-area: image;
+      }
+
+      .badge {
+        width: calc(#{$width-badge} * 0.7);
+        height: calc(#{$height-badge} * 0.7);
+        right: -16px;
+        top: -10px;
+      }
+
+      .book-title {
+        font-size: 24px;
+        align-self: center;
+        justify-self: center;
+        grid-area: title;
+      }
+
+      .book-genre {
+        font-size: 16px;
+        line-height: 19px;
+        margin: 16px 0 0;
+        grid-area: genre;
+        justify-self: center;
+      }
+
+      .container-text {
+        display: grid;
+        justify-self: center;
+        align-self: center;
+        width: 300px;
+        margin: 0 18px;
+        grid-area: description;
+        border-top: 4px solid $earls-green;
+        grid-template-rows: 18px 126px;
+        grid-template-areas: '.' 'details';
+      }
+
+      .container-detail {
+        grid-area: details;
+        margin: 0;
+      }
+
+      .title {
+        font-size: 14px;
+      }
+
+      .detail {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

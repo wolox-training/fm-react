@@ -7,20 +7,25 @@
       "esnext"
     ],
     "allowJs": true,
+    "baseUrl": "src",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react-jsx",
+    "types": [
+      "jest"
+    ]
   },
   "include": [
     "src"
   ],
-  "extends": "./tsconfig.paths.json"
+  "extends": "./base-tsconfig.json"
 }
