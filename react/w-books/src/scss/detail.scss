@@ -35,10 +35,13 @@ $height-badge: 119px;
     width: 900px;
     background-color: $white;
     box-shadow: 4px 4px 10px 0 $black-rgba;
-    grid-template-columns: 309px 250px 341px;
-    grid-template-rows: 75px 341px;
-    grid-template-areas: 'image title genre'
-      'image description description';
+    // grid-template-columns: 309px 250px 341px;
+    // grid-template-rows: 75px 341px;
+    // grid-template-areas: 'image title genre'
+    //   'image description description';
+    grid-template: 'image title genre' 75px
+      'image description description' 341px
+      / 309px 250px 341px;
 
     .cover-page-badge-container {
       display: flex;
