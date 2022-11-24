@@ -1,8 +1,8 @@
 import { create } from 'apisauce';
 
-const baseURL = 'http://wolox.com';
+const baseURL = 'https://books-training-rails.herokuapp.com/api/v1/';
 
-if (baseURL === 'http://wolox.com') {
+if (baseURL === 'https://books-training-rails.herokuapp.com/api/v1/') {
   console.warn('API baseURL has not been properly initialized'); // eslint-disable-line no-console
 }
 
@@ -19,8 +19,8 @@ const api = create({
   timeout: 15000
 });
 
-// eslint-disable-next-line no-unused-vars, prettier/prettier, @typescript-eslint/no-unused-vars
-export const apiSetup = dispatch => {
+// eslint-disable-next-line no-unused-vars prettier/prettier, @typescript-eslint/no-unused-vars
+export const apiSetup = (dispatch: any) => {
   api.addMonitor(response => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*

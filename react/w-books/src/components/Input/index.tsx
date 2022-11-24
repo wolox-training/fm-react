@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 
@@ -11,10 +11,11 @@ interface Props {
   required?: boolean;
   pattern?: RegExp;
   validate?: Record<string,any>;
+  minLength?: number;
 }
 
-export default function Input({ type, label, required, pattern, validate, ...props }: Props) {
-  const { register } = useForm();
+export default function Input({ type, label, required, pattern, validate, minLength, ...props }: Props) {
+  const { register } = useFormContext();
 
   return (
     <>
@@ -22,7 +23,7 @@ export default function Input({ type, label, required, pattern, validate, ...pro
         {' '}
         {label}
       </label>
-      <input className={styles.credentialsBox} {...props} ref={register({ required, pattern, validate })} />
+      <input className={styles.credentialsBox} {...props} ref={register({ required, pattern, validate, minLength })} />
     </>
   );
 }
