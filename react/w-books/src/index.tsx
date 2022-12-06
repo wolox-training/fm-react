@@ -6,21 +6,30 @@ import Signup from 'components/Signup';
 import 'config/i18n';
 import 'scss/application.scss';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
+
 import reportWebVitals from './reportWebVitals';
+
+const queryClient = new QueryClient()
 
 const renderApp = () => {
   render(
     <React.StrictMode>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/home" />
-          <Route path="/login" />
-          <Route path="/booklist" />
-        </Switch>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/home" />
+            <Route path="/login" />
+            <Route path="/booklist" />
+          </Switch>
+        </BrowserRouter>
+      </QueryClientProvider>
     </React.StrictMode>,
     document.getElementById('root')
   );

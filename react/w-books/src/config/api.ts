@@ -7,7 +7,8 @@ if (baseURL === 'https://books-training-rails.herokuapp.com/api/v1/') {
 }
 
 const STATUS_CODES = {
-  unauthorized: 401
+  unauthorized: 401,
+  success: 200
 };
 
 const api = create({
@@ -20,7 +21,6 @@ const api = create({
 });
 
 // eslint-disable-next-line no-unused-vars prettier/prettier, @typescript-eslint/no-unused-vars
-export const apiSetup = (dispatch: any) => {
   api.addMonitor(response => {
     if (response.status === STATUS_CODES.unauthorized) {
       /*
@@ -30,11 +30,10 @@ export const apiSetup = (dispatch: any) => {
     }
   });
 
-  api.addMonitor(response => {
-    if (response.problem === 'NETWORK_ERROR') {
-      // TODO: These callbacks should only be called if no other callback was asigned for the response.
+  api.addResponseTransform(response => {
+    if(response.status !== STATUS_CODES.success) {
+      throw response.data;
     }
   });
-};
 
 export default api;
