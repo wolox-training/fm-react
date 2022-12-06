@@ -16,7 +16,6 @@ interface Props {
 
 export default function Input({ type, label, required, pattern, validate, minLength, ...props }: Props) {
   const { register } = useFormContext();
-
   return (
     <>
       <label htmlFor={type} className={styles.text}>
