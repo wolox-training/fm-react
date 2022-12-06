@@ -13,7 +13,6 @@ import { FormSignup } from "../../utils/types";
 
 import { registerService } from "../../services/users";
 
-
 export default function SignUp() {
   const history = useHistory();
   const methods = useForm<FormSignup>({ mode: 'onSubmit' });
