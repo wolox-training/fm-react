@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "@wolox/eslint-config",
+    "@wolox/eslint-config-react",
+    "@wolox/eslint-config-typescript",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["testing-library"],
+  "settings": {
+    "react": { "version": "detect" },
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "include": ["src"]
+  }
+}
