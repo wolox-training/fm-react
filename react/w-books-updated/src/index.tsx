@@ -1,19 +1,37 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import App from 'components/App';
+import Signup from 'components/Signup';
 import 'config/i18n';
 import 'scss/application.scss';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
+
 import reportWebVitals from './reportWebVitals';
 
-const root = createRoot(document.getElementById('root')!);
+const queryClient = new QueryClient()
 
 const renderApp = () => {
-  root.render(
+  render(
     <React.StrictMode>
-      <App />
-    </React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/home" />
+            <Route path="/login" />
+            <Route path="/booklist" />
+          </Switch>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
   );
 };
 
