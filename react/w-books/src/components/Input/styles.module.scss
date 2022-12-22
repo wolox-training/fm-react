@@ -1,0 +1,17 @@
+@import '../../scss/variables.scss';
+
+.text {
+  align-self: flex-start;
+  color: $black;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.credentials-box {
+  height: 32px;
+  width: 252px;
+  border-radius: 5px;
+  background-color: $white;
+  margin-bottom: 16px;
+}
